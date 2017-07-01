@@ -215,7 +215,7 @@ app.get('/webhook/', (req, res) => {
 
         setTimeout(() => {
             doSubscribeRequest();
-        }, 3000);
+        }, 8000);
     } else {
         res.send('Error, wrong validation token');
     }
