@@ -207,7 +207,8 @@ app.get('/.well-known/acme-challenge/1SXqJa7N1tgtGkEECuhcNUNAZ-v7qLSJaTt6rgYCurM
     res.send("1SXqJa7N1tgtGkEECuhcNUNAZ-v7qLSJaTt6rgYCurM.MGZi3KOytVoSlmhkWohDGBBGVUVkK4LdSDhvUOP9qrc");
 });
 app.get('/webhook/', (req, res) => {
-    if (req.query['hub.verify_token'] == FB_VERIFY_TOKEN) {
+    console.log(req.query);
+    if (req.query['hub.verify_token'] == FB_VERIFY_TOKEN || req.query['hub.challenge'] ==  FB_VERIFY_TOKEN) {
         res.send(req.query['hub.challenge']);
 
         setTimeout(() => {
