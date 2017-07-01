@@ -203,7 +203,7 @@ const app = express();
 
 app.use(bodyParser.text({type: 'application/json'}));
 
-app.get('/.well-known/tnqeREzcE7cq3doUlsU0MNpJfouSbSJ9omJRRxnuMxk.MGZi3KOytVoSlmhkWohDGBBGVUVkK4LdSDhvUOP9qrc',(req,res)=>{
+app.get('.well-known/acme-challenge/tnqeREzcE7cq3doUlsU0MNpJfouSbSJ9omJRRxnuMxk',(req,res)=>{
     res.send("tnqeREzcE7cq3doUlsU0MNpJfouSbSJ9omJRRxnuMxk.MGZi3KOytVoSlmhkWohDGBBGVUVkK4LdSDhvUOP9qrc");
 });
 app.get('/webhook/', (req, res) => {
