@@ -210,15 +210,21 @@ app.get('/webhook/', (req, res) => {
     console.log(req.query['hub.verify_token']);
     console.log(req.query['hub.challenge']);
 
-    if (req.query['hub.verify_token'] == FB_VERIFY_TOKEN || req.query['hub.challenge'] ==  FB_VERIFY_TOKEN) {
-        res.send(req.query['hub.challenge']);
+    res.send(req.query['hub.challenge']);
 
-        setTimeout(() => {
-            doSubscribeRequest();
-        }, 8000);
-    } else {
-        res.send('Error, wrong validation token');
-    }
+    setTimeout(() => {
+        doSubscribeRequest();
+    }, 8000);
+
+    // if (req.query['hub.verify_token'] == FB_VERIFY_TOKEN || req.query['hub.challenge'] ==  FB_VERIFY_TOKEN) {
+    //     res.send(req.query['hub.challenge']);
+    //
+    //     setTimeout(() => {
+    //         doSubscribeRequest();
+    //     }, 8000);
+    // } else {
+    //     res.send('Error, wrong validation token');
+    // }
 });
 
 app.post('/webhook/', (req, res) => {
