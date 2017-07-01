@@ -203,8 +203,8 @@ const app = express();
 
 app.use(bodyParser.text({type: 'application/json'}));
 
-app.get('/.well-known/acme-challenge/tnqeREzcE7cq3doUlsU0MNpJfouSbSJ9omJRRxnuMxk',(req,res)=>{
-    res.send("tnqeREzcE7cq3doUlsU0MNpJfouSbSJ9omJRRxnuMxk.MGZi3KOytVoSlmhkWohDGBBGVUVkK4LdSDhvUOP9qrc");
+app.get('/.well-known/acme-challenge/1SXqJa7N1tgtGkEECuhcNUNAZ-v7qLSJaTt6rgYCurM',(req,res)=>{
+    res.send("1SXqJa7N1tgtGkEECuhcNUNAZ-v7qLSJaTt6rgYCurM.MGZi3KOytVoSlmhkWohDGBBGVUVkK4LdSDhvUOP9qrc");
 });
 app.get('/webhook/', (req, res) => {
     if (req.query['hub.verify_token'] == FB_VERIFY_TOKEN) {
