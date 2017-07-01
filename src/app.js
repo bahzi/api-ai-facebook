@@ -32,7 +32,15 @@ function processEvent(event) {
 
         let apiaiRequest = apiAiService.textRequest(text,
             {
-                sessionId: sessionIds.get(sender)
+                sessionId: sessionIds.get(sender),
+                contexts :[
+                    {
+                        name : "generic",
+                        parameters : {
+                            id_user : sender
+                        }
+                    }
+                ]
             });
 
         apiaiRequest.on('response', (response) => {
@@ -150,7 +158,7 @@ function sendFBSenderAction(sender, action, callback) {
             method: 'POST',
             json: {
                 recipient: {id: sender},
-                sender_action: action
+                sender_action: action,
             }
         }, (error, response, body) => {
             if (error) {
