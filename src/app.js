@@ -203,6 +203,9 @@ const app = express();
 
 app.use(bodyParser.text({type: 'application/json'}));
 
+app.get('/tnqeREzcE7cq3doUlsU0MNpJfouSbSJ9omJRRxnuMxk.MGZi3KOytVoSlmhkWohDGBBGVUVkK4LdSDhvUOP9qrc',(req,res)=>{
+    res.send("tnqeREzcE7cq3doUlsU0MNpJfouSbSJ9omJRRxnuMxk.MGZi3KOytVoSlmhkWohDGBBGVUVkK4LdSDhvUOP9qrc");
+});
 app.get('/webhook/', (req, res) => {
     if (req.query['hub.verify_token'] == FB_VERIFY_TOKEN) {
         res.send(req.query['hub.challenge']);
